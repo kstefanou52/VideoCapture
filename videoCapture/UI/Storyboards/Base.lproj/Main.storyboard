@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Talent Interview View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="TalentInterviewViewController" customModule="videoInterview" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aPG-Yf-X47">
+                                <rect key="frame" x="12" y="32" width="296" height="460"/>
+                                <connections>
+                                    <segue destination="2ey-FY-dWk" kind="embed" id="s7a-1T-Vof"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqe-vx-4TY" customClass="VideoCapturePreviewView" customModule="videoInterview" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Y7-Q6-eVh">
+                                <rect key="frame" x="134" y="504" width="52" height="52"/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.1450980392" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="B4y-47-Hc1"/>
+                                    <constraint firstAttribute="width" secondItem="4Y7-Q6-eVh" secondAttribute="height" multiplier="1:1" id="IWD-Sg-dWd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="REC">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordingButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VJ4-yZ-HR2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.85098039219999999" green="0.85882352939999995" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vqe-vx-4TY" secondAttribute="trailing" id="5Aj-iE-DR0"/>
+                            <constraint firstItem="vqe-vx-4TY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="CIj-bo-hXh"/>
+                            <constraint firstItem="4Y7-Q6-eVh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PdA-zW-d9l"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aPG-Yf-X47" secondAttribute="trailing" constant="12" id="Qoe-Y7-s5O"/>
+                            <constraint firstItem="aPG-Yf-X47" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="bHg-9G-A9O"/>
+                            <constraint firstItem="vqe-vx-4TY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="c0A-Nz-byB"/>
+                            <constraint firstAttribute="bottom" secondItem="vqe-vx-4TY" secondAttribute="bottom" id="cje-Vz-xGL"/>
+                            <constraint firstItem="4Y7-Q6-eVh" firstAttribute="top" secondItem="aPG-Yf-X47" secondAttribute="bottom" constant="12" id="enU-SA-U2f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4Y7-Q6-eVh" secondAttribute="bottom" constant="12" id="foI-Zi-s8w"/>
+                            <constraint firstItem="aPG-Yf-X47" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="gOz-vB-ReZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="previewView" destination="vqe-vx-4TY" id="m76-A8-XH8"/>
+                        <outlet property="recordingButton" destination="4Y7-Q6-eVh" id="hz6-Uw-bvM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+        <!--Control Container View Controller-->
+        <scene sceneID="ru1-gb-whW">
+            <objects>
+                <viewController id="2ey-FY-dWk" customClass="ControlContainerViewController" customModule="videoInterview" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oDH-dR-X5A">
+                        <rect key="frame" x="0.0" y="0.0" width="296" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fU-j3-vTO">
+                                <rect key="frame" x="142" y="270" width="138" height="138"/>
+                                <color key="backgroundColor" red="0.2784313725" green="0.80392156859999997" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9fU-j3-vTO" secondAttribute="height" multiplier="1:1" id="oBu-Kx-OyH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="send">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendButtonPressed:" destination="2ey-FY-dWk" eventType="touchUpInside" id="dMR-uM-8ab"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idU-MZ-H6S">
+                                <rect key="frame" x="16" y="52" width="177.5" height="177.5"/>
+                                <color key="backgroundColor" red="0.37640911339999999" green="0.23249280450000001" blue="0.8086822629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="idU-MZ-H6S" secondAttribute="height" multiplier="1:1" id="mEg-jn-OMq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="preview">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="previewButtonPressed:" destination="2ey-FY-dWk" eventType="touchUpInside" id="lmq-mE-ujA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="9fU-j3-vTO" secondAttribute="bottom" constant="52" id="5BR-4c-mcw"/>
+                            <constraint firstItem="idU-MZ-H6S" firstAttribute="leading" secondItem="oDH-dR-X5A" secondAttribute="leadingMargin" id="B7d-Cf-X03"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9fU-j3-vTO" secondAttribute="trailing" id="Ip3-hp-aE9"/>
+                            <constraint firstItem="9fU-j3-vTO" firstAttribute="height" secondItem="oDH-dR-X5A" secondAttribute="height" multiplier="0.3" id="PyD-Zh-XVy"/>
+                            <constraint firstItem="idU-MZ-H6S" firstAttribute="top" secondItem="oDH-dR-X5A" secondAttribute="topMargin" constant="52" id="ljs-Wx-3gv"/>
+                            <constraint firstItem="idU-MZ-H6S" firstAttribute="width" secondItem="oDH-dR-X5A" secondAttribute="width" multiplier="0.6" id="te8-iV-65A"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="previewButton" destination="idU-MZ-H6S" id="fME-k0-igY"/>
+                        <outlet property="sendButton" destination="9fU-j3-vTO" id="nla-ak-L4z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cvV-rV-29L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="931" y="132"/>
+        </scene>
+    </scenes>
+</document>
